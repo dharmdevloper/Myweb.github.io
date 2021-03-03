@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="icon" 
+      type="image/png" 
+      href="https://th.bing.com/th/id/OIP.WEMoPy6y7VyDoLdDZ7MQggHaLO?w=182&h=275&c=7&o=5&pid=1.7">
+
+<script>
+    function check_input() 
+    {
+    sessionStorage.setItem("USERNAME", document.getElementById("inputuser").value);
+    }
+
+</script>
+<style>
+    footer
+    {
+    margin-top:250px;
+    }
+    marquee 
+    {
+     text-shadow: 4px 4px 9px red;
+    }
+</style>
+</head>
+<body style="background-image:url(https://source.unsplash.com/1600x600/?cocktail)">
+<div>
+<marquee class="mx-2" style="font-size:45px; font-family:cambria; color:white ">Welcome to Dharma Wines</marquee>
+</div>
+<div class="jumbotron px-4 py-4 my-2 mx-2" style="height:200px;width:370px;background-color:transparent">
+
+
+<div class="container-fluid " >
+<form  id="frm1" name="myForm" action="/index/" method="post" onsubmit="check_input()">
+{% csrf_token %}
+  <div class="mb-0" >
+    <label id="uname"  class="form-label" style="color:white;border-radius:3em">User Name</label>
+    <input type="text" class="form-control" name="name" id="inputuser" placeholder="Enter Username" required>
+  </div>
+  <br>
+  <div class="mb-2">
+    <label for="password" class="form-label" style="color:white">Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Enter Password">
+    
+  </div>
+  <input type="submit" name="" value="Login">
+</form>
+</div>
+</div>
+<footer>
+    <div style="background-color:indigo">
+<p class="mt-5 mb-3 text-center" style="color:white">&copy;Dharma Wines, 2021-2022. All rights reserved</br>
+    Use of our products and services are governed by our Terms of Use and Privacy Policy.
+</p>
+     </div>
+</footer>
+</body>
+</html>
